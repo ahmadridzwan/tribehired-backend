@@ -12,7 +12,7 @@ module.exports.getAllComments = async (req, res) => {
 // Search comments with a query
 module.exports.searchComments = async (req, res) => {
   // Extract query from the request
-  const query = req.query.query;
+  const query = (req.query.query) ? req.query.query : '' ;
   // Retrieve all comments
   const allComments = await this.getAllComments();
   
